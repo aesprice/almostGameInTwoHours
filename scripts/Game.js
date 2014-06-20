@@ -18,7 +18,7 @@ Game.prototype.update = function(){
   for(var i = 0; i < this.movers.length; i++){
     this.movers[i].render();
   }
-
+  this.hero.render();
   setTimeout(function(){
     this.update();
   }.bind(this), 100);
@@ -32,6 +32,8 @@ Game.prototype.init = function(){
   for(var i = 0; i < this.movers.length; i++){
     $('.gameboard').append(this.movers[i].render());
   }
+  $('.gameboard').append(this.hero.render());
+
   setTimeout(function(){
     this.update();
   }.bind(this), 100);
