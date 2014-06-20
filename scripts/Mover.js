@@ -13,6 +13,12 @@ var Mover = function(speed, direction, startX, img, name){
 
 Mover.prototype.move = function(){
   this.x += this.speed * this.direction;
+  if(this.x < 0){
+    this.x = document.body.clientWidth;
+  }
+  else if (this.x > document.body.clientWidth ){
+    this.x = 0;
+  }
 };
 
 Mover.prototype.render = function(){

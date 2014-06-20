@@ -3,7 +3,7 @@ var Game = function(){
   this.spongeImg = "http://fusepilates.com/wp-content/uploads/2011/04/249px-SpongeBob_SquarePants.svg_.png";
   this.flyingDutchmanImg ="http://img3.wikia.nocookie.net/__cb20101127010313/spongebob/images/8/8a/Flying_Dutchman.svg";
   this.mermaidManImg = "http://img1.wikia.nocookie.net/__cb20120816062639/spongebob/images/c/c2/300px-Mermaid_Man.svg.png";
-  this.hero = new Hero(40, 1, 30, this.patrickImg, 'patrick');
+  this.hero = new Hero(4, 1, 30, this.patrickImg, 'patrick');
   this.movers = [];
   this.controls = {};
   this.left = false;
@@ -63,9 +63,9 @@ Game.prototype.init = function(){
       this.controls.space = false;
     }
   });
-  this.movers.push(new Mover(50, -1, 600, this.spongeImg, 'sponge'));
-  this.movers.push(new Mover(20, -1, 800, this.flyingDutchmanImg, 'dutch'));
-  this.movers.push(new Mover(30, -1, 700, this.mermaidManImg, 'merman'));
+  this.movers.push(new Mover(4, -1, 600, this.spongeImg, 'sponge'));
+  this.movers.push(new Mover(2, -1, 800, this.flyingDutchmanImg, 'dutch'));
+  this.movers.push(new Mover(3, -1, 700, this.mermaidManImg, 'merman'));
   for(var i = 0; i < this.movers.length; i++){
     $('.gameboard').append(this.movers[i].render());
   }
@@ -74,4 +74,6 @@ Game.prototype.init = function(){
   setTimeout(function(){
     this.update();
   }.bind(this), 100);
+
+
 };
