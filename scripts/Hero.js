@@ -10,3 +10,15 @@ Hero.prototype.changeDirection = function(){
 Hero.prototype.die = function(){
 
 };
+
+Hero.prototype.move = function(left, right){
+  if(left && !right){
+    this.direction = -1;
+  }else if(!left && right){
+    this.direction = 1;
+  }else{
+    this.direction = 0;
+  }
+  this.x += this.speed * this.direction;
+  // console.log(this.direction);
+};
